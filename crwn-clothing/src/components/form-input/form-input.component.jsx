@@ -1,18 +1,18 @@
-const FormInput = ({}) => {
+import "./form-input.styles.scss";
+
+const FormInput = ({ label, inputOptions }) => {
   return (
-    <div>
-      <h1>Sign up with your email and password</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Display Name</label>
-        <input
-          type="text"
-          required
-          onChange={handleChange}
-          name="displayName"
-          value={displayName}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    <div className="group">
+      <input className="form-input" {...inputOptions} />
+      {label && (
+        <label
+          className={`${
+            inputOptions.value.length ? "shrink" : ""
+          } form-input-label`}
+        >
+          {label}
+        </label>
+      )}
     </div>
   );
 };
