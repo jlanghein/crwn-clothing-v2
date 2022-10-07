@@ -9,6 +9,7 @@ const SignIn = () => {
     const userDocRef = await createUserDocumentFromAuth(user);
     console.log(user);
   };
+
   return (
     <div>
       <h1>Sign In Page</h1>
